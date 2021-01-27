@@ -1,0 +1,29 @@
+//这是一个狗子选择界面。2021/1/27
+public class Three{
+	public static void main(String[] args){
+		
+		System.out.println("这是一个狗子选择界面");
+		redDog();
+		blueDog();
+	}
+	public static void redDog(){
+		System.out.println("    红狗子");
+		System.out.println("===============");
+		System.out.println(" 性格：活泼开朗");
+		System.out.println("===============");
+		System.out.println("    脾气：大");
+		System.out.println("===============");
+		System.out.println("    价格：五元");
+		System.out.println("===============");
+	}
+	public static void blueDog(){
+		System.out.println("    蓝狗子");
+		System.out.println("===============");
+		System.out.println(" 性格：忧郁沉静");
+		System.out.println("===============");
+		System.out.println("    脾气：小");
+		System.out.println("===============");
+		System.out.println("    价格：十元");
+		System.out.println("===============");
+	}
+}
