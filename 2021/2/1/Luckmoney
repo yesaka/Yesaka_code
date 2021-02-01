@@ -1,0 +1,122 @@
+package yekevosche.masterpiece.luckmoney;
+
+public abstract class AbstractYes {
+    public abstract void name();
+    public abstract void acount();
+}
+//
+//
+//
+package yekevosche.masterpiece.luckmoney;
+
+import java.util.*;
+
+
+public class Master extends AbstractYes {
+
+    private  double mAcount;
+    private  String maName;
+
+    public  double getmAcount() {
+        return mAcount;
+    }
+
+    public  void setmAcount(double mAcount) {
+        mAcount = mAcount;
+    }
+
+    public void name(){
+        String r=new Scanner(System.in).next();
+        maName=r;
+    }
+    public void acount(){
+        double k=new Scanner(System.in).nextDouble();
+        mAcount=k;
+    }
+    public double sent(int a){
+        mAcount-=a;
+        return mAcount;
+    }
+}
+//
+//
+/
+package yekevosche.masterpiece.luckmoney;
+import java.util.*;
+public class Member extends AbstractYes {
+    private  ArrayList mbName;
+    private  ArrayList mbAcount;
+    double middle;
+    int num;
+
+
+    public  ArrayList getMbAcount() {
+        return mbAcount;
+    }
+
+    public  void setMbAcount(ArrayList mbAcount) {
+        this.mbAcount = mbAcount;
+    }
+
+
+    public void name() {
+
+        for (int i = 0; i < num; i++) {
+            System.out.println("请输入第"+(i+1)+"个学生的名字：");
+            mbName.add(new Scanner(System.in).next());
+
+        }
+
+    }
+
+
+    public void acount() {
+
+        for (int i = 0; i < num; i++) {
+            mbAcount.add(0.0);
+        }
+    }
+
+    public void receve(int a,int num){
+        double cash=(double)a/num;
+        middle+=cash;
+        for (int i = 0; i < num; i++) {
+            mbName.get(i);
+            System.out.println(":");
+            mbAcount.add(i,middle);
+            mbAcount.get(i);
+        }
+
+    }
+}
+////
+//
+//
+package yekevosche.masterpiece.luckmoney;
+import java.util.*;
+public class MainClass {
+    public static void main(String[] args) {
+        Master ma=new Master();
+        Member me=new Member();
+        Scanner ok=new Scanner(System.in);
+        me.num=ok.nextInt();
+        System.out.println("=====================");
+        System.out.println("=欢迎来到发红包系统。=");
+        System.out.println("=====================");
+        System.out.print("请先输入群主名：");
+        ma.name();
+        System.out.print("输入群主余额：");
+        ma.acount();
+        System.out.println("现在输入成员名字：");
+        me.name();
+        me.acount();
+        System.out.println("===============");
+        System.out.println("群主发的红包金额：");
+        int take=new Scanner(System.in).nextInt();
+        System.out.println("群主的余额是："+ma.sent(take));
+        int lng=me.getMbAcount().size();
+        me.receve(take,me.num);
+
+
+    }
+}
